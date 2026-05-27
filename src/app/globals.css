@@ -1,0 +1,43 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* Allow vertical scroll on mobile where the layout stacks */
+  overflow: hidden;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Responsive layout for phones/tablets ─────────────────────────────────── */
+@media (max-width: 768px) {
+  html, body {
+    overflow-y: auto;
+  }
+
+  .bc-root {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 100dvh;
+    overflow-y: auto !important;
+  }
+
+  .bc-canvas {
+    flex: 0 0 52vh !important;
+    width: 100% !important;
+    min-height: 300px;
+  }
+
+  .bc-panel {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-left: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+  }
+}
